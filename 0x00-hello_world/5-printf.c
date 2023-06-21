@@ -1,4 +1,3 @@
-#!/bin/bash
 #include <stdio.h>
 /**
  * *Description:main - A prgram that prints a line using the printf function
