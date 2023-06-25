@@ -1,28 +1,48 @@
 #include <stdio.h>
 
-int main(void) {
-    int num1, num2;
+/**
+ * main - Entry point of the program
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	int tens1, ones1, tens2, ones2;
 
-    for (num1 = 0; num1 <= 98; num1++) {
-        for (num2 = num1 + 1; num2 <= 99; num2++) {
-            // Print the first two-digit number
-            putchar((num1 / 10) + '0');
-            putchar((num1 % 10) + '0');
-            putchar(' ');
+	tens1 = 0;
+	while (tens1 <= 9)
+	{
+		ones1 = 0;
+		while (ones1 <= 9)
+		{
+			tens2 = tens1;
+			while (tens2 <= 9)
+			{
+				ones2 = (tens2 == tens1) ? ones1 + 1 : 0;
+				while (ones2 <= 9)
+				{
+					putchar(tens1 + '0');
+					putchar(ones1 + '0');
+					putchar(' ');
+					putchar(tens2 + '0');
+					putchar(ones2 + '0');
 
-            // Print the second two-digit number
-            putchar((num2 / 10) + '0');
-            putchar((num2 % 10) + '0');
+					if (!(tens1 == 9 && ones1 == 8 && tens2 == 9 && ones2 == 9))
+					{
+						putchar(',');
+						putchar(' ');
+					}
 
-            // Print comma and space if not the last combination
-            if (!(num1 == 98 && num2 == 99)) {
-                putchar(',');
-                putchar(' ');
-            }
-        }
-    }
+					ones2++;
+				}
+				tens2++;
+			}
+			ones1++;
+		}
+		tens1++;
+	}
 
-    putchar('\n');
+	putchar('\n');
 
-    return 0;
+	return (0);
 }
