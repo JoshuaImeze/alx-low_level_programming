@@ -1,1 +1,1 @@
-This is my first readme here
+More pointers and array on C
